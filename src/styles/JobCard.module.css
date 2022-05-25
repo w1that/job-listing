@@ -71,7 +71,8 @@
   display: flex;
   align-items: center;
   right: 34px;
-  top: 50%;
+  top: 10px;
+  bottom: 10px;
 }
 
 .tag {

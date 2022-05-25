@@ -3,29 +3,49 @@ import styles from "../styles/TagWrapper.module.css";
 import TagItem from "../components/TagItem";
 
 function TagWrapper({ tags, setTags }) {
- 
-  const [style, setStyle] = useState({opacity:0, transition:"200ms"})
+  const [opacity, setOpacity] = useState(0);
+  const [cleaned, setCleaned] = useState(false);
 
-  useEffect(() => {
+  function handleClearTags() {
+    //about animation
+    setCleaned(true);
+    //let the animation plays
     setTimeout(() => {
-      setStyle({opacity:1, transition:"200ms"})
+      setTags([]);
     }, 300);
-  }, [])
-  
-  
-  function handleClearTags(){
-    setTags([]);
   }
-  
+  //about animation
+  useEffect(() => {
+    setOpacity(0);
+  }, [cleaned]);
+
+  //about animation
+  useEffect(() => {
+    setOpacity(1);
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div
+      style={{ transition: "300ms", opacity: opacity }}
+      className={styles.container}
+    >
       <div className={styles.tags}>
-        {tags.map((tag) => (
-          <TagItem setTags={setTags} tag={tag} />
-        ))}
+        {tags.map((tag) => {
+          return (
+            <TagItem
+              setOpacity={setOpacity}
+              tags={tags}
+              key={tag}
+              setTags={setTags}
+              tag={tag}
+            />
+          );
+        })}
       </div>
 
-      <label onClick={handleClearTags} className={styles.clearButton}>Clear</label>
+      <label onClick={handleClearTags} className={styles.clearButton}>
+        Clear
+      </label>
     </div>
   );
 }
