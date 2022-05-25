@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/TagWrapper.module.css";
 import TagItem from "../components/TagItem";
 
 function TagWrapper({ tags, setTags }) {
+ 
+  const [style, setStyle] = useState({opacity:0, transition:"200ms"})
 
+  useEffect(() => {
+    setTimeout(() => {
+      setStyle({opacity:1, transition:"200ms"})
+    }, 300);
+  }, [])
+  
+  
   function handleClearTags(){
     setTags([]);
   }
@@ -12,7 +21,7 @@ function TagWrapper({ tags, setTags }) {
     <div className={styles.container}>
       <div className={styles.tags}>
         {tags.map((tag) => (
-          <TagItem tag={tag} />
+          <TagItem setTags={setTags} tag={tag} />
         ))}
       </div>
 

@@ -9,17 +9,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 40px;
+    padding: 24px 0px;
 }
 
 .tags{
     display: flex;
     align-items: center;
+    margin-left: 40px;
 }
 
 .clearButton{
     font-size: 20px;
     color: hsl(180, 29%, 50%);
+    margin-right: 40px;
 }
 
 .clearButton:hover{

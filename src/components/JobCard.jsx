@@ -1,9 +1,54 @@
-import React from 'react'
+import React from "react";
+import styles from "../styles/JobCard.module.css";
+import img from "../assets/account.svg";
+import { mdiCircleSmall } from "@mdi/js";
+import Icon from "@mdi/react";
 
-function JobCard() {
+function JobCard({ job, setTags, tags }) {
+
+  const jobsTags = [job.role, job.level, ...job.languages, ...job.tools];
+
+  function handleSelectTag(tag){
+    if(!tags.includes(tag)){
+      setTags(prev=>[...prev,tag]);
+    }
+  }
+
   return (
-    <div>JobCard</div>
-  )
+    <div className={styles.container}>
+      <div className={styles.innerContainer}>
+        <img src={img} className={styles.image} />
+
+        <div className={styles.infoWrapper}>
+          <div className={styles.header}>
+            <h1 className={styles.company}>{job.company}</h1>
+            {(job.featured || job.new) && (
+              <span className={styles.badgesWrapper}>
+                {job.new&&<label className={styles.newBadget}>{job.new && "NEW"}</label>}
+                {job.featured&&<label className={styles.featuredBadget}>
+                  {job.featured && "FEATURED"}
+                </label>}
+              </span>
+            )}
+          </div>
+          <h2 className={styles.position}>{job.position}</h2>
+          <span className={styles.detailInfo}>
+            <label>{job.postedAt}</label>
+            <Icon size={1} path={mdiCircleSmall} />
+            <label>{job.contract}</label>
+            <Icon size={1} path={mdiCircleSmall} />
+            <label>{job.location}</label>
+          </span>
+        </div>
+
+        <div className={styles.tagsWrapper}>
+          {jobsTags.map(tag=>(
+            <button onClick={()=>handleSelectTag(tag)} className={styles.tag}>{tag}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default JobCard
+export default JobCard;

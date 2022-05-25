@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import TagWrapper from './components/TagWrapper';
+import JobList from './components/JobList'
 
 function App() {
 
-  const [tags, setTags] = useState(["Frontend", "CSS","JavaScript"]);
+  const [tags, setTags] = useState([]);
 
   function handleShowTags(){
     if(tags.length>0){
@@ -16,6 +17,7 @@ function App() {
     <div className='headerImage' />
     <div className='innerContainer'>
     {handleShowTags()}
+    <JobList setTags={setTags} tags={tags} />
     </div>
 
 
