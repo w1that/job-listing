@@ -16,7 +16,7 @@ function JobList({ setTags, tags }) {
             return jobsTags.includes(element);
           })
         ) {
-            setShownJobs((prev) => [...prev, job]);
+          setShownJobs((prev) => [...prev, job]);
         }
       });
     }
@@ -25,11 +25,11 @@ function JobList({ setTags, tags }) {
   const [width, setWindowWidth] = useState(0);
   const updateDimensions = () => {
     setWindowWidth(window.innerWidth);
-  }
+  };
 
   useEffect(() => {
     updateDimensions();
-  }, [tags])
+  }, [tags]);
 
   useEffect(() => {
     if (tags.length === 0) {
@@ -42,11 +42,21 @@ function JobList({ setTags, tags }) {
     setTimeout(() => {
       setOpacity(1);
     }, 300);
-  }, [shownJobs.length])
-  
+  }, [shownJobs.length]);
+
 
   return (
-    <div style={{opacity:opacity, transition:opacity===1&&'300ms', marginTop:(width<=500&&(tags.length>0?'20px':'80px'))||(width>500&&'20px')}} className={styles.container}>
+      <div
+      style={{
+        opacity: opacity,
+        transition: opacity === 1 && "300ms",
+        // as the tags field fades in, adjust the margin in order to keep t
+        marginTop:
+          (width <= 500 && (tags.length > 0 ? "20px" : "90px")) ||
+          (width > 500 && tags.length===0?"102px":"20px"),
+      }}
+      className={styles.container}
+    >
       {shownJobs.map((job) => (
         <JobCard setTags={setTags} tags={tags} job={job} />
       ))}
