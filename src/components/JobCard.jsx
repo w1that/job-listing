@@ -40,15 +40,20 @@ function JobCard({ job, setTags, tags }) {
             <Icon size={1} path={mdiCircleSmall} />
             <label>{job.location}</label>
           </span>
-        </div>
 
-        <div className={styles.tagsWrapper}>
+          <div className={styles.divider} />
+          <div className={styles.tagsWrapper}>
           {jobsTags.map((tag) => (
             <button onClick={() => handleSelectTag(tag)} className={styles.tag}>
               {tag}
             </button>
           ))}
         </div>
+        </div>
+
+        
+
+        
       </div>
     </div>
   );

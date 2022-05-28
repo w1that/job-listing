@@ -95,3 +95,81 @@
   color: hsl(180, 33%, 91%);
   background-color: hsl(180, 29%, 50%);
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    background-color: hsl(180, 31%, 95%);
+    box-shadow: 0px 4px 14px -9px rgba(0, 0, 0, 0.34);
+    color: hsl(180, 29%, 50%);
+    margin-bottom: 56px;
+    border-radius: 6px;
+  }
+
+  .image {
+    position: absolute;
+    top: -35px;
+    width: 70px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .company {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  .position {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+
+  .innerContainer {
+    padding: 34px 26px;
+    display: flex;
+    position: relative;
+  }
+
+  .tagsWrapper {
+    position: initial;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .infoWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .tag {
+    background-color: hsl(180, 33%, 91%);
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 16px;
+    padding: 8px 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    color: hsl(180, 29%, 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 0px;
+    cursor: pointer;
+    transition: 200ms;
+  }
+
+  .divider {
+    height: 2px;
+    background-color: hsl(180, 15%, 80%);
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}

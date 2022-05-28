@@ -27,3 +27,27 @@
 .clearButton:hover {
   text-decoration: underline;
 }
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    background-color: hsl(180, 31%, 95%);
+    position: absolute;
+    top: -35.42px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 23px -11px rgba(0, 0, 0, 0.34);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+  }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  align-items: center;
+  margin-left: 16px;
+}
+}

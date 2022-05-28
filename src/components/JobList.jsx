@@ -22,6 +22,15 @@ function JobList({ setTags, tags }) {
     }
   }, [tags]);
 
+  const [width, setWindowWidth] = useState(0);
+  const updateDimensions = () => {
+    setWindowWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    updateDimensions()
+  }, [tags])
+
   useEffect(() => {
     if (tags.length === 0) {
       setShownJobs(jobs);
@@ -37,7 +46,7 @@ function JobList({ setTags, tags }) {
   
 
   return (
-    <div style={{opacity:opacity, transition:opacity===1&&'300ms'}} className={styles.container}>
+    <div style={{opacity:opacity, transition:opacity===1&&'300ms', marginTop:(width<=500&&(tags.length>0?'20px':'80px'))||(width>500&&'20px')}} className={styles.container}>
       {shownJobs.map((job) => (
         <JobCard setTags={setTags} tags={tags} job={job} />
       ))}
