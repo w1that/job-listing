@@ -5,6 +5,7 @@
   color: hsl(180, 29%, 50%);
   margin-bottom: 26px;
   border-radius: 6px;
+  position: relative;
 }
 
 .innerContainer {
@@ -96,6 +97,16 @@
   background-color: hsl(180, 29%, 50%);
 }
 
+.featuredCardIdentifier{
+    width: 4px;
+    height: 100%;
+    background-color: hsl(180, 29%, 50%);
+    position: absolute;
+    left: 0px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     width: 100%;
@@ -134,6 +145,7 @@
     padding: 34px 26px;
     display: flex;
     position: relative;
+    padding-bottom: 18px;
   }
 
   .tagsWrapper {

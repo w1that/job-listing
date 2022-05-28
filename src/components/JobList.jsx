@@ -24,11 +24,11 @@ function JobList({ setTags, tags }) {
 
   const [width, setWindowWidth] = useState(0);
   const updateDimensions = () => {
-    setWindowWidth(window.innerWidth)
+    setWindowWidth(window.innerWidth);
   }
 
   useEffect(() => {
-    updateDimensions()
+    updateDimensions();
   }, [tags])
 
   useEffect(() => {

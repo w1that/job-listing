@@ -14,6 +14,7 @@ function JobCard({ job, setTags, tags }) {
 
   return (
     <div className={styles.container}>
+     {job.featured && <div className={styles.featuredCardIdentifier} />} 
       <div className={styles.innerContainer}>
         <img src={job.logo} className={styles.image} alt={'company brand logo'} />
         <div className={styles.infoWrapper}>
