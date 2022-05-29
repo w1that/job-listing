@@ -38,7 +38,7 @@
     position: relative;
     width: 60%;
     overflow: auto;
-    margin-left: 40px;
+    margin-left: 20px;
   }
 
   .gradient {
@@ -55,6 +55,7 @@
     );
     width: 50px;
     height: 100%;
+    pointer-events: none;
   }
 
   ::-webkit-scrollbar {
