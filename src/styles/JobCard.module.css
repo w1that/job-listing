@@ -127,6 +127,8 @@
   .image {
     width: 70px;
     height: 70px;
+    position: absolute;
+    top: -35px;
   }
   .header {
     display: flex;
