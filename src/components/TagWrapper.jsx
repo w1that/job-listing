@@ -29,6 +29,7 @@ function TagWrapper({ tags, setTags }) {
       style={{ transition: "300ms", opacity: opacity }}
       className={styles.container}
     >
+      <div className={styles.tagsWrapper}>
       <div className={styles.tags}>
         {tags.map((tag) => {
           return (
@@ -41,8 +42,12 @@ function TagWrapper({ tags, setTags }) {
             />
           );
         })}
+        
       </div>
 
+      <div className={styles.gradient} />
+      </div>
+      
       <label onClick={handleClearTags} className={styles.clearButton}>
         Clear
       </label>

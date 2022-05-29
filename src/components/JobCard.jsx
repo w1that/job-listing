@@ -8,7 +8,7 @@ function JobCard({ job, setTags, tags }) {
 
   function handleSelectTag(tag) {
     if (!tags.includes(tag)) {
-      setTags((prev) => [...prev, tag]);
+      setTags((prev) => [tag, ...prev]);
     }
   }
 

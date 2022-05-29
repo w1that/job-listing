@@ -27,25 +27,37 @@
   text-decoration: underline;
 }
 
-
 @media screen and (max-width: 500px) {
-  .container {
+  .tags {
     width: 100%;
-    background-color: hsl(180, 31%, 95%);
-    position: relative;
-    top: -35.42px;
-    border-radius: 7px;
-    box-shadow: 0px 4px 23px -11px rgba(0, 0, 0, 0.34);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0px;
+    overflow: auto;
+    margin-left: 0px;
   }
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 10px;
-  align-items: center;
-  margin-left: 16px;
-}
+
+  .tagsWrapper {
+    position: relative;
+    width: 60%;
+    overflow: auto;
+    margin-left: 40px;
+  }
+
+  .gradient {
+    background: rgb(2, 0, 36);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: -1px;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0) 0%,
+      rgba(9, 9, 121, 0) 45%,
+      rgba(238, 246, 246, 1) 100%
+    );
+    width: 50px;
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
