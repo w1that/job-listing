@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TagWrapper from "./components/TagWrapper";
 import JobList from "./components/JobList";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [tags, setTags] = useState([]);
+  const [selectedPage, setSelectedPage] = useState(0);
 
   function handleShowTags() {
     if (tags.length > 0) {
@@ -17,8 +19,13 @@ function App() {
       <div className="headerImage" />
       <div className="innerContainer">
         {handleShowTags()}
-        <JobList setTags={setTags} tags={tags} />
+        <JobList selectedPage={selectedPage} setTags={setTags} tags={tags} />
       </div>
+
+      <Pagination
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
     </div>
   );
 }

@@ -2,10 +2,30 @@
   width: 100%;
   height: 100%;
   margin-top: 80px;
+  margin-bottom: 10em;
+}
+
+.notFoundContainer{
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notFoundText{
+  font-style: 26px;
 }
 
 @media screen and (max-width: 500px) {
   .container {
     margin-top: 100px;
+  }
+
+  .notFoundContainer{
+    height: 50vh;
+  }
+
+  .notFoundText{
+    font-style: 20px;
   }
 }
