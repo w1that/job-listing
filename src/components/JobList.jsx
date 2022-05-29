@@ -22,15 +22,6 @@ function JobList({ setTags, tags }) {
     }
   }, [tags]);
 
-  const [width, setWindowWidth] = useState(0);
-  const updateDimensions = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    updateDimensions();
-  }, [tags]);
-
   useEffect(() => {
     if (tags.length === 0) {
       setShownJobs(jobs);
@@ -50,10 +41,6 @@ function JobList({ setTags, tags }) {
       style={{
         opacity: opacity,
         transition: opacity === 1 && "300ms",
-        // as the tags field fades in, adjust the margin in order to keep t
-        marginTop:
-          (width <= 500 && (tags.length > 0 ? "20px" : "90px")) ||
-          (width > 500 && tags.length===0?"102px":"20px"),
       }}
       className={styles.container}
     >

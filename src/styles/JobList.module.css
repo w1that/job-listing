@@ -1,12 +1,13 @@
 .container {
   width: 100%;
   height: 100%;
+  margin-top: 80px;
 }
 
 
 @media screen and (max-width: 500px) {
   .container {
-    position: initial;
+    margin-top: 60px;
   }
   
 
